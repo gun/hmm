@@ -10,7 +10,6 @@ from data import generate_seqs
 from viterbi import predict_state_seq
 
 
-
 if __name__ == "__main__":
     # Generate a data set of observed sequences from the model.
     # NOTE: Two sets of sequences are generated. the first using the actual
@@ -27,7 +26,6 @@ if __name__ == "__main__":
         count
     )
 
-
     # decode each observed sequence
     seqs_decoded, seqs_decoded_most_likely = [], []
     for i, (seq, seq_most_likely) in enumerate(zip(seqs, seqs_most_likely)):
@@ -41,7 +39,6 @@ if __name__ == "__main__":
 
     print("")
 
-
     # find the distance between decoded and ground truth hidden sequences
     dist = lambda seq, ref: np.sum([int(a != b) for a, b in zip(seq, ref)])
     distances = [dist(seq, ref) for seq, ref in zip(seqs_decoded, seqs_hidden)]
@@ -49,7 +46,6 @@ if __name__ == "__main__":
         dist(seq, ref)
         for seq, ref in zip(seqs_decoded_most_likely, seqs_hidden)
     ]
-
 
     print(
         "mean distance between predicted and "
@@ -61,7 +57,3 @@ if __name__ == "__main__":
         "correct observed most likely sequences: "
         f"{np.mean(distances_most_likely):.2f}"
     )
-
-
-
-

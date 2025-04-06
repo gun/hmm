@@ -20,10 +20,8 @@ if __name__ == "__main__":
     count = 100
     _, seqs, seqs_most_likely = generate_seqs(P0, P, O, seqlen, count)
 
-
     # Initialize expectation maximization
     model = EM(P0.shape[0], O.shape[1], seqs_most_likely)
-
 
     # Iterate until convergence
     # NOTE: Not actualling testing for convergence below

@@ -45,7 +45,6 @@ class EM():
         P_sum_num, P_sum_den = np.zeros(self.P.shape), np.zeros(self.P.shape[0])
         O_sum_num, O_sum_den = np.zeros(self.O.shape), np.zeros(self.O.shape[0])
 
-
         # Expectation step - aggregate contribution of each sequence
         for seq in self.seqs:
             # Fwd/backward functions
@@ -66,11 +65,7 @@ class EM():
                 O_sum_num[:,seq[t]] = O_sum_num[:,seq[t]] + gamma_matrix[t]
             O_sum_den = O_sum_den + np.sum(gamma_matrix, axis=0).reshape(-1, 1)
 
-
         # Maximization step
         self.P0 = P0_sum_num / len(self.seqs)
         self.P = P_sum_num / P_sum_den.reshape(-1, 1)
         self.O = O_sum_num / O_sum_den
-
-
-

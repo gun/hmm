@@ -46,7 +46,6 @@ def generate_seqs(
             k-1
         )
 
-
     # Generate probabilistic hidden sequences
     seqs_hidden = []
     for i in range(count):
@@ -58,14 +57,12 @@ def generate_seqs(
 
     print("")
 
-
     # Generate corresponding observed sequences with probabilistic outputs
     print("generating observed sequences ...")
     seqs = [
         [np.random.choice(range(O.shape[1]), p=O[a,:]) for a in seq]
         for seq in seqs_hidden
     ]
-
 
     # Generate corresponding observed sequences with the highest probability
     # output
@@ -74,6 +71,5 @@ def generate_seqs(
         [np.argmax(O[a,:]) for a in seq]
         for seq in seqs_hidden
     ]
-
 
     return seqs_hidden, seqs, seqs_most_likely

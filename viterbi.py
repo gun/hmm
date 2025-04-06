@@ -33,7 +33,6 @@ def predict_state_seq(
     # The path matrix keeps track of the highest score path 
     matrix_score = np.zeros((len(seq), P0.shape[0]))
     matrix_path = np.zeros((len(seq), P0.shape[0]))
-
     
     # Build matrices
     for t in range(len(seq)):
@@ -49,11 +48,9 @@ def predict_state_seq(
 
             matrix_score[t,i] = scores[j] * O[i][seq[t]]
             matrix_path[t,i] = j
-
             
         # Normalize to manage underflow
         matrix_score[t,:] = matrix_score[t,:] / np.max(matrix_score[t,:])
-
 
     # Decode to find the optimal path
     seq_decoded = []
@@ -62,5 +59,4 @@ def predict_state_seq(
         seq_decoded.append(int(i))
         i = matrix_path[t,int(i)]
 
-    
     return list(reversed(seq_decoded))

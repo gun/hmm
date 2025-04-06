@@ -154,4 +154,3 @@ def gamma(
     matrix = matrix / np.sum(matrix, axis=1).reshape(-1, 1)
 
     return matrix
-
