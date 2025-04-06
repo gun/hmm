@@ -1,7 +1,6 @@
 """core probabilistic functions that are used by various HMM algorithms.
 """
 
-
 import numpy as np
 from numpy.typing import NDArray
 

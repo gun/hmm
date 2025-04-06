@@ -1,7 +1,6 @@
 """Test script that decodes observed sequences to predict hidden sequences.
 """
 
-
 import sys
 import numpy as np
 

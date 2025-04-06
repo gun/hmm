@@ -2,10 +2,7 @@
 HMMs.
 """
 
-
 import numpy as np
-
-
 from hmm import alpha, beta, xi, gamma
 
 

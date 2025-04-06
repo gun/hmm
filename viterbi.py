@@ -2,7 +2,6 @@
 sequence given an observed sequence corresponding to a specific hmm.
 """
 
-
 import numpy as np
 from numpy.typing import NDArray
 

@@ -2,12 +2,10 @@
 sequences. 
 """
 
-
 import sys
 import copy
 
 import numpy as np
-
 
 from model import P0, P, O 
 from data import generate_seqs

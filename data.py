@@ -1,7 +1,6 @@
 """Functions to generate test data.
 """
 
-
 import sys
 import numpy as np
 from numpy.typing import NDArray
